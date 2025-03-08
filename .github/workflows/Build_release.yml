@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FLUTTER_VERSION: '3.10.5'
+      FLUTTER_VERSION: '3.24.3'
       JAVA_HOME: '/usr/lib/jvm/azul-zulu-17'
 
     steps:

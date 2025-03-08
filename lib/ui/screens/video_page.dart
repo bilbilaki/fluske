@@ -81,7 +81,7 @@ class _VideosPageState extends State<VideosPage>
 
     animation = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: Duration(milliseconds: 300),
     );
     _fadeInFadeOut = Tween<double>(begin: 0.2, end: 1.0).animate(animation);
 
@@ -157,7 +157,7 @@ class _VideosPageState extends State<VideosPage>
   }
 
   Future<Null> refreshList() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
     getMenuData();
   }
 

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'package:fluske/common/global.dart';

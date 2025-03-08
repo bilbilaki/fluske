@@ -44,7 +44,7 @@ class _ImageSliderState extends State<ImageSlider> {
                     scrollDirection: Axis.horizontal,
                     autoPlay: true,
                     autoPlayInterval: Duration(seconds: 10),
-                    autoPlayAnimationDuration: Duration(milliseconds: 500),
+                    autoPlayAnimationDuration: Duration(milliseconds: 300),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     viewportFraction: 1.0,
                     enableInfiniteScroll: true,

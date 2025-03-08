@@ -13,7 +13,6 @@ import 'package:fluske/providers/user_profile_provider.dart';
 import 'package:fluske/ui/screens/splash_screen.dart';
 import 'package:fluske/ui/shared/appbar.dart';
 import 'package:fluske/ui/shared/success_ticket.dart';
-import 'package:payhere_mobilesdk_flutter/payhere_mobilesdk_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -196,12 +195,12 @@ class _PayHerePaymentState extends State<PayHerePayment> {
             height: 45,
             child: ElevatedButton(
               style: ButtonStyle(
-                shape: MaterialStateProperty.all<OutlinedBorder?>(
+                shape: WidgetStateProperty.all<OutlinedBorder?>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-                backgroundColor: MaterialStateProperty.all<Color?>(
+                backgroundColor: WidgetStateProperty.all<Color?>(
                   Color.fromRGBO(72, 163, 198, 1.0),
                 ),
               ),
@@ -311,6 +310,7 @@ class _PayHerePaymentState extends State<PayHerePayment> {
       "custom_2": ""
     };
 
+    var PayHere;
     PayHere.startPayment(paymentObject, (paymentId) {
       print("One Time Payment Success. Payment Id: $paymentId");
       sendPaymentDetails(paymentId, "PayHere");

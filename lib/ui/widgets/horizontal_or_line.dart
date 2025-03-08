@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HorizontalOrLine extends StatelessWidget {
   const HorizontalOrLine({this.label, this.height, this.dividerColor});

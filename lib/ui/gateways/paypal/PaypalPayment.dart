@@ -180,7 +180,7 @@ class PaypalPaymentState extends State<PaypalPayment> {
   Widget build(BuildContext context) {
     if (checkoutUrl != null) {
       return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: customAppBar(context, "Paypal Payment") as PreferredSizeWidget?,
         body: WebView(
           initialUrl: checkoutUrl,

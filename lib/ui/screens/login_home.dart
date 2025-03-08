@@ -84,11 +84,11 @@ class _LoginHomeState extends State<LoginHome> {
           stops: [0.1, 0.3, 0.5, 0.7, 1.0],
           colors: [
             // Colors are easy thanks to Flutter's Colors class.
-            Color.fromRGBO(72, 163, 198, 1.0),
-            Color.fromRGBO(30, 157, 207, 25),
-            Color.fromRGBO(27, 162, 187, 50),
-            Color.fromRGBO(32, 163, 173, 75),
-            Color.fromRGBO(37, 164, 160, 100),
+            Color.fromRGBO(43, 50, 193, 1),
+            Color.fromRGBO(36, 56, 156, 1),
+            Color.fromRGBO(44, 73, 192, 1),
+            Color.fromRGBO(32, 53, 173, 1),
+            Color.fromRGBO(22, 22, 115, 1),
           ],
         ),
       ),
@@ -166,7 +166,7 @@ class _LoginHomeState extends State<LoginHome> {
   If the widget is hidden, animate to 1.0 (fully visible).
 */
           opacity: _visible == true ? 1.0 : 0.0,
-          duration: Duration(milliseconds: 500),
+          duration: Duration(milliseconds: 200),
 
 /*
 For setting logo image that is accessed from the server using API.

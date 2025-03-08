@@ -64,7 +64,7 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
                         stops: [0.0, 0.6],
                         colors: <Color>[
                           Colors.transparent,
-                          Theme.of(context).colorScheme.background
+                          Theme.of(context).colorScheme.surface
                         ],
                       ),
                     ),
@@ -74,7 +74,7 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
                       color: Colors.transparent,
                       elevation: 10.0,
                       child: Container(
-                        color: Theme.of(context).colorScheme.background,
+                        color: Theme.of(context).colorScheme.surface,
                         height: 170,
                         width: screenWidth,
                         child: ClipRRect(

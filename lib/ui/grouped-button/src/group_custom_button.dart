@@ -46,12 +46,12 @@ class GroupCustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(EdgeInsets.zero),
-          elevation: MaterialStateProperty.all<double>(0.0),
+          padding: WidgetStateProperty.all(EdgeInsets.zero),
+          elevation: WidgetStateProperty.all<double>(0.0),
           backgroundColor: isSelected
-              ? MaterialStateProperty.all<Color?>(selectedColor)
-              : MaterialStateProperty.all<Color?>(unselectedColor),
-          shape: MaterialStateProperty.all<OutlinedBorder>(
+              ? WidgetStateProperty.all<Color?>(selectedColor)
+              : WidgetStateProperty.all<Color?>(unselectedColor),
+          shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: borderRadius ?? BorderRadius.circular(30),
               side: BorderSide(

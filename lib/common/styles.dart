@@ -110,7 +110,7 @@ ThemeData buildLightTheme() {
       ).titleLarge,
     ),
     colorScheme: kColorScheme
-        .copyWith(background: Colors.white, surface: kDarkBG)
+        .copyWith(surface: kDarkBG)
         .copyWith(error: kErrorRed),
   );
 }
@@ -147,12 +147,10 @@ const ColorScheme kColorScheme = ColorScheme(
   primary: kTeal100,
   secondary: kTeal50,
   surface: kSurfaceWhite,
-  background: kBackgroundWhite,
   error: kErrorRed,
   onPrimary: kGrey900,
   onSecondary: kGrey900,
   onSurface: kGrey900,
-  onBackground: kGrey900,
   onError: kSurfaceWhite,
   brightness: Brightness.light,
 );
@@ -194,7 +192,6 @@ ThemeData buildDarkTheme() {
       ).titleLarge,
     ),
     colorScheme: ColorScheme(
-      background: kDarkBG,
       primary: kTeal100,
       secondary: kTeal50,
       surface: kSurfaceWhite,
@@ -202,7 +199,6 @@ ThemeData buildDarkTheme() {
       onPrimary: kGrey200,
       onSecondary: kGrey200,
       onSurface: kGrey200,
-      onBackground: kGrey200,
       onError: kSurfaceWhite,
       brightness: Brightness.dark,
     ),

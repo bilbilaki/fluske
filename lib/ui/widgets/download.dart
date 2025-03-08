@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
-import 'package:path_provider_android/path_provider_android.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 

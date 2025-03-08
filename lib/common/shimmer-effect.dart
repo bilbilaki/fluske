@@ -68,7 +68,7 @@ class Shimmer extends StatefulWidget {
     required this.child,
     required this.gradient,
     this.direction = ShimmerDirection.ltr,
-    this.period = const Duration(milliseconds: 1500),
+    this.period = const Duration(milliseconds: 400),
     this.loop = 0,
     this.enabled = true,
   }) : super(key: key);
@@ -84,7 +84,7 @@ class Shimmer extends StatefulWidget {
     required Color baseColor,
     required Color highlightColor,
     required Color highlightColor2,
-    this.period = const Duration(milliseconds: 1500),
+    this.period = const Duration(milliseconds: 400),
     this.direction = ShimmerDirection.ltr,
     this.loop = 0,
     this.enabled = true,

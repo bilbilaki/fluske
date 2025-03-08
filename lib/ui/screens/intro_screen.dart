@@ -71,7 +71,7 @@ class _IntroScreenState extends State<IntroScreen> {
             : Provider.of<AppConfig>(context, listen: false).appModel;
 
     myModel != null
-        ? myModel.config!.otpLogin == 1 || "${myModel.config!.otpLogin}" == "1"
+        ? myModel.config!.otpLogin == 1 || "${myModel.config!.otpLogin}" == "0"
             ? Navigator.pushNamed(context, RoutePaths.login)
             : Navigator.pushNamed(context, RoutePaths.loginHome)
         : Navigator.pushNamed(context, RoutePaths.loginHome);
@@ -187,7 +187,7 @@ class _IntroScreenState extends State<IntroScreen> {
       renderSkipBtn: this.renderSkipBtn(),
       showSkipBtn: true,
       skipButtonStyle: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(
+        backgroundColor: WidgetStateProperty.all<Color>(
             Theme.of(context).primaryColor.withOpacity(0.3)),
       ),
 
@@ -198,12 +198,12 @@ class _IntroScreenState extends State<IntroScreen> {
       renderDoneBtn: this.renderDoneBtn(),
       onDonePress: this.onDonePress,
       doneButtonStyle: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(
+        backgroundColor: WidgetStateProperty.all<Color>(
             Theme.of(context).primaryColor.withOpacity(0.3)),
       ),
 
       nextButtonStyle: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(
+        backgroundColor: WidgetStateProperty.all<Color>(
             Theme.of(context).primaryColor.withOpacity(0.3)),
       ),
 

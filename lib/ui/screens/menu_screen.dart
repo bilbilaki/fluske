@@ -823,7 +823,7 @@ class _MenuScreenState extends State<MenuScreen> {
       builder: (builder) {
         return Theme(
             data: ThemeData(
-              dialogBackgroundColor: Color.fromRGBO(0, 0, 0, 0.2),
+              dialogTheme: DialogThemeData(backgroundColor: Color.fromRGBO(0, 0, 0, 0.2)),
               // platform: TargetPlatform.android,
             ),
             child: new Container(
@@ -1027,7 +1027,7 @@ class _MenuScreenState extends State<MenuScreen> {
               children: [
                 CircularProgressIndicator(
                   valueColor: new AlwaysStoppedAnimation<Color>(
-                    Theme.of(context).colorScheme.background,
+                    Theme.of(context).colorScheme.surface,
                   ),
                 ),
                 SizedBox(
@@ -1036,7 +1036,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 Text(
                   translate("Loading_"),
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.background),
+                      color: Theme.of(context).colorScheme.surface),
                 )
               ],
             ),

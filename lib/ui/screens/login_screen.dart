@@ -4,7 +4,6 @@ import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -292,7 +291,7 @@ class _LoginScreenState extends State<LoginScreen> {
           actions: <Widget>[
             TextButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color?>(
+                backgroundColor: WidgetStateProperty.all<Color?>(
                   Colors.blueAccent,
                 ),
               ),
@@ -314,7 +313,7 @@ class _LoginScreenState extends State<LoginScreen> {
     var msg1 = msg.replaceAll('"', "");
     Widget okButton = TextButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color?>(
+        backgroundColor: WidgetStateProperty.all<Color?>(
           primaryBlue,
         ),
       ),
@@ -335,7 +334,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       content: Text("$msg1 Verify email sent on your register email.",
           style: TextStyle(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             fontSize: 16.0,
           )),
       actions: [
@@ -371,7 +370,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(
                       "Loading ..",
                       style: TextStyle(
-                          color: Theme.of(context).colorScheme.background),
+                          color: Theme.of(context).colorScheme.surface),
                     )
                   ],
                 ),
@@ -770,12 +769,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   style: TextStyle(
                                                       color: Theme.of(context)
                                                           .colorScheme
-                                                          .background,
+                                                          .surface,
                                                       fontSize: 16.0),
                                                 ),
                                                 style: ButtonStyle(
                                                   backgroundColor:
-                                                      MaterialStateProperty.all<
+                                                      WidgetStateProperty.all<
                                                           Color?>(
                                                     Colors.white,
                                                   ),
@@ -846,7 +845,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 ),
                                                 style: ButtonStyle(
                                                   backgroundColor:
-                                                      MaterialStateProperty.all<
+                                                      WidgetStateProperty.all<
                                                           Color?>(
                                                     Color.fromRGBO(
                                                       60,

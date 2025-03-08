@@ -109,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             actions: <Widget>[
               TextButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
+                  backgroundColor: WidgetStateProperty.all<Color?>(
                     Colors.blueAccent,
                   ),
                 ),
@@ -132,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     var msg1 = msg.replaceAll('"', "");
     Widget okButton = TextButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color?>(
+        backgroundColor: WidgetStateProperty.all<Color?>(
           primaryBlue,
         ),
       ),
@@ -157,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       content: Text(
         "$msg1 Verify your email to continue.",
         style: TextStyle(
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
           fontSize: 16.0,
         ),
       ),

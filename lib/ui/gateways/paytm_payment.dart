@@ -213,7 +213,7 @@ class _PaytmPaymentState extends State<PaytmPayment> {
                   }
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
+                  backgroundColor: WidgetStateProperty.all<Color?>(
                     primaryBlue,
                   ),
                 ),
@@ -237,7 +237,7 @@ class _PaytmPaymentState extends State<PaytmPayment> {
                   }
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
+                  backgroundColor: WidgetStateProperty.all<Color?>(
                     primaryBlue,
                   ),
                 ),
@@ -261,7 +261,7 @@ class _PaytmPaymentState extends State<PaytmPayment> {
                   }
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
+                  backgroundColor: WidgetStateProperty.all<Color?>(
                     primaryBlue,
                   ),
                 ),
@@ -285,7 +285,7 @@ class _PaytmPaymentState extends State<PaytmPayment> {
                   }
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
+                  backgroundColor: WidgetStateProperty.all<Color?>(
                     primaryBlue,
                   ),
                 ),

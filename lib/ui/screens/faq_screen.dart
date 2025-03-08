@@ -22,7 +22,7 @@ class _FAQScreenState extends State<FAQScreen> {
       final box = keyContext.findRenderObject() as RenderBox?;
       _scrollController.animateTo(
           isExpanded ? (box!.size.height * index) : previousOffset!,
-          duration: Duration(milliseconds: 500),
+          duration: Duration(milliseconds: 100),
           curve: Curves.linear);
     }
   }

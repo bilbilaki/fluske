@@ -264,10 +264,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -292,10 +292,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -320,10 +320,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -348,10 +348,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -622,10 +622,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -650,10 +650,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -678,10 +678,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -706,10 +706,10 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -1062,13 +1062,13 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                 Expanded(
                   child: ElevatedButton.icon(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                           Theme.of(context).primaryColor),
-                      overlayColor: MaterialStateProperty.all(
+                      overlayColor: WidgetStateProperty.all(
                           Theme.of(context).primaryColorDark.withOpacity(0.1)),
-                      padding: MaterialStateProperty.all(
+                      padding: WidgetStateProperty.all(
                           const EdgeInsets.fromLTRB(0, 10.0, 0.0, 10.0)),
-                      textStyle: MaterialStateProperty.all(
+                      textStyle: WidgetStateProperty.all(
                         Theme.of(context).textTheme.bodyLarge!.copyWith(
                               fontFamily: 'Lato',
                             ),
@@ -1106,13 +1106,13 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                 Expanded(
                   child: ElevatedButton.icon(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                           Theme.of(context).primaryColor.withOpacity(0.2)),
-                      overlayColor: MaterialStateProperty.all(
+                      overlayColor: WidgetStateProperty.all(
                           Theme.of(context).primaryColorDark.withOpacity(0.1)),
-                      padding: MaterialStateProperty.all(
+                      padding: WidgetStateProperty.all(
                           const EdgeInsets.fromLTRB(0, 10.0, 0.0, 10.0)),
-                      textStyle: MaterialStateProperty.all(
+                      textStyle: WidgetStateProperty.all(
                         Theme.of(context).textTheme.bodyLarge!.copyWith(
                               fontFamily: 'Lato',
                             ),
@@ -1200,17 +1200,17 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                           ],
                         ),
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color?>(
+                          backgroundColor: WidgetStateProperty.all<Color?>(
                             theme.primaryColor.withOpacity(0.1),
                           ),
-                          overlayColor: MaterialStateProperty.all<Color?>(
+                          overlayColor: WidgetStateProperty.all<Color?>(
                             theme.primaryColor,
                           ),
                           padding:
-                              MaterialStateProperty.all<EdgeInsetsGeometry?>(
+                              WidgetStateProperty.all<EdgeInsetsGeometry?>(
                             const EdgeInsets.fromLTRB(6.0, 0.0, 12.0, 0.0),
                           ),
-                          shape: MaterialStateProperty.all<OutlinedBorder?>(
+                          shape: WidgetStateProperty.all<OutlinedBorder?>(
                             RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(10.0),
                               side: BorderSide(
@@ -1253,13 +1253,13 @@ class VideoDetailHeaderState extends State<VideoDetailHeader>
                     ],
                   ),
                   style: ButtonStyle(
-                    overlayColor: MaterialStateProperty.all<Color?>(
+                    overlayColor: WidgetStateProperty.all<Color?>(
                       theme.primaryColorLight,
                     ),
-                    padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(
+                    padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(
                       const EdgeInsets.fromLTRB(6.0, 0.0, 12.0, 0.0),
                     ),
-                    shape: MaterialStateProperty.all<OutlinedBorder?>(
+                    shape: WidgetStateProperty.all<OutlinedBorder?>(
                       RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(10.0),
                         side: BorderSide(color: Colors.white70, width: 2.0),

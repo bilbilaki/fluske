@@ -34,7 +34,7 @@ class OtpAuthProvider with ChangeNotifier {
     notifyListeners();
     try {
       final response = await http.post(
-        Uri.parse('https://clicknplays.com/public/api/send-otp'),
+        Uri.parse(''),
         body: {'mobile': phone},
       );
       print("hello:$response");
@@ -75,7 +75,7 @@ class OtpAuthProvider with ChangeNotifier {
     FAQProvider faqProvider = Provider.of<FAQProvider>(ctx, listen: false);
 
     final response = await http.post(
-      Uri.parse('https://clicknplays.com/public/api/verify-otp'),
+      Uri.parse(''),
       body: {'mobile': _phone, 'otp': otp},
     );
 

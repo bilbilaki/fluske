@@ -254,12 +254,12 @@ class _PayuPaymentState extends State<PayuPayment> {
             height: 45,
             child: ElevatedButton(
               style: ButtonStyle(
-                shape: MaterialStateProperty.all<OutlinedBorder?>(
+                shape: WidgetStateProperty.all<OutlinedBorder?>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-                backgroundColor: MaterialStateProperty.all<Color?>(
+                backgroundColor: WidgetStateProperty.all<Color?>(
                   Color.fromRGBO(72, 163, 198, 1.0),
                 ),
               ),

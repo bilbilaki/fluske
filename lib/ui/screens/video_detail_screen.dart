@@ -369,7 +369,7 @@ class _VideoDetailScreenState extends State<VideoDetailScreen>
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
+                  backgroundColor: WidgetStateProperty.all<Color?>(
                     Theme.of(context).primaryColor,
                   ),
                 ),
@@ -1552,10 +1552,10 @@ class _VideoDetailScreenState extends State<VideoDetailScreen>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -1582,10 +1582,10 @@ class _VideoDetailScreenState extends State<VideoDetailScreen>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -1612,10 +1612,10 @@ class _VideoDetailScreenState extends State<VideoDetailScreen>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),
@@ -1642,10 +1642,10 @@ class _VideoDetailScreenState extends State<VideoDetailScreen>
                         padding: EdgeInsets.only(left: 50.0, right: 50.0),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color?>(
+                            backgroundColor: WidgetStateProperty.all<Color?>(
                               activeDotColor,
                             ),
-                            overlayColor: MaterialStateProperty.all<Color?>(
+                            overlayColor: WidgetStateProperty.all<Color?>(
                               Color.fromRGBO(72, 163, 198, 1.0),
                             ),
                           ),

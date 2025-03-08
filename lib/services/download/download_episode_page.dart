@@ -339,10 +339,10 @@ class _DownloadEpisodePageState extends State<DownloadEpisodePage>
                           child: ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStateProperty.all<Color?>(
+                                  WidgetStateProperty.all<Color?>(
                                 activeDotColor,
                               ),
-                              overlayColor: MaterialStateProperty.all<Color?>(
+                              overlayColor: WidgetStateProperty.all<Color?>(
                                 Color.fromRGBO(72, 163, 198, 1.0),
                               ),
                             ),
@@ -373,10 +373,10 @@ class _DownloadEpisodePageState extends State<DownloadEpisodePage>
                           child: ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStateProperty.all<Color?>(
+                                  WidgetStateProperty.all<Color?>(
                                 activeDotColor,
                               ),
-                              overlayColor: MaterialStateProperty.all<Color?>(
+                              overlayColor: WidgetStateProperty.all<Color?>(
                                 Color.fromRGBO(72, 163, 198, 1.0),
                               ),
                             ),
@@ -402,10 +402,10 @@ class _DownloadEpisodePageState extends State<DownloadEpisodePage>
                           child: ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStateProperty.all<Color?>(
+                                  WidgetStateProperty.all<Color?>(
                                 activeDotColor,
                               ),
-                              overlayColor: MaterialStateProperty.all<Color?>(
+                              overlayColor: WidgetStateProperty.all<Color?>(
                                 Color.fromRGBO(72, 163, 198, 1.0),
                               ),
                             ),
@@ -431,10 +431,10 @@ class _DownloadEpisodePageState extends State<DownloadEpisodePage>
                           child: ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStateProperty.all<Color?>(
+                                  WidgetStateProperty.all<Color?>(
                                 activeDotColor,
                               ),
-                              overlayColor: MaterialStateProperty.all<Color?>(
+                              overlayColor: WidgetStateProperty.all<Color?>(
                                 Color.fromRGBO(72, 163, 198, 1.0),
                               ),
                             ),

@@ -110,11 +110,11 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     if ((userDetails.userProfileModel!.removeAds == "0" ||
-            userDetails.userProfileModel!.removeAds == 0) &&
+            userDetails.userProfileModel!.removeAds == 1) &&
         (appconfig.appConfig.removeAds == 0 ||
-            appconfig.appConfig.removeAds == '0')) {
+            appconfig.appConfig.removeAds == '1')) {
       if (!_loadingAnchoredBanner) {
-        _loadingAnchoredBanner = true;
+        _loadingAnchoredBanner = false;
         _createAnchoredBanner(context);
       }
     }

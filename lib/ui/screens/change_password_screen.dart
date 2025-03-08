@@ -290,7 +290,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   Text(
                     translate('Your_password_updated'),
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.background),
+                        color: Theme.of(context).colorScheme.surface),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,

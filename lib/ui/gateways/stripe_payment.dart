@@ -12,7 +12,6 @@ import '/providers/app_config.dart';
 import '/providers/payment_key_provider.dart';
 import '/providers/user_profile_provider.dart';
 // ignore: import_of_legacy_library_into_null_safe
-import '/stripe-sdk/stripe_api.dart';
 import '/ui/screens/splash_screen.dart';
 import '/ui/widgets/credit_card_form.dart';
 import '/ui/widgets/credit_card_model.dart';
@@ -71,20 +70,6 @@ class _StripePaymentState extends State<StripePayment> {
     List x = expiryDate!.split("/");
     var x1 = int.parse(x[0]);
     var x2 = int.parse(x[1]);
-    StripeCard card = new StripeCard(
-        id: '', number: cardNumber!, cvc: cvvCode!, expMonth: x1, expYear: x2);
-    card.name = cardHolderName!;
-    Stripe.instance!
-        .createCardToken(card)
-        .then((c) {
-          print("Card Saved");
-          _saveCardForCustomer(customerStripeId, c.id, stripePass, planId);
-        })
-        .then((source) {})
-        .catchError((error) {
-          String message = '$error';
-          showErrorDialog(message);
-        });
   }
 
 //  Stripe card is automatically saved for customer for future payment.
@@ -750,7 +735,6 @@ class _StripePaymentState extends State<StripePayment> {
       var stripeKey = Provider.of<PaymentKeyProvider>(context, listen: false)
           .paymentKeyModel!
           .key!;
-      Stripe.init(stripeKey);
       setState(() {
         _visible = true;
       });

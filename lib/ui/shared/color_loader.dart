@@ -14,7 +14,7 @@ class ColorLoader extends StatefulWidget {
       {this.dotThreeColor = const Color.fromRGBO(72, 163, 198, 1.0),
       this.dotOneColor = Colors.white70,
       this.dotTwoColor = const Color.fromRGBO(125, 183, 91, 1.0),
-      this.duration = const Duration(milliseconds: 1000),
+      this.duration = const Duration(milliseconds: 300),
       this.dotType = DotType.circle,
       this.dotIcon = const Icon(Icons.blur_on)});
 

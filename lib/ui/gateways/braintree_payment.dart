@@ -98,7 +98,7 @@ class _BraintreePaymentScreenState extends State<BraintreePaymentScreen> {
               Text(
                 "Uploading Details...",
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                 ),
               ),
               SizedBox(

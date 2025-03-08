@@ -143,11 +143,11 @@ class _InAppState extends State<InApp> {
                                 },
                                 style: ButtonStyle(
                                   backgroundColor:
-                                      MaterialStateProperty.all<Color?>(
+                                      WidgetStateProperty.all<Color?>(
                                     primaryBlue,
                                   ),
                                   overlayColor:
-                                      MaterialStateProperty.all<Color?>(
+                                      WidgetStateProperty.all<Color?>(
                                     Color.fromRGBO(72, 163, 198, 1.0),
                                   ),
                                 ),

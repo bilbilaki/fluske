@@ -240,7 +240,7 @@ class _ApplyCouponScreenState extends State<ApplyCouponScreen> {
                                     : ElevatedButton(
                                         style: ButtonStyle(
                                           backgroundColor:
-                                              MaterialStateProperty.all<Color?>(
+                                              WidgetStateProperty.all<Color?>(
                                             activeDotColor,
                                           ),
                                         ),

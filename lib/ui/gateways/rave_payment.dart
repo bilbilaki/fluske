@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:fluske/stripe-sdk/model/customer.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:flutterwave_standard/models/subaccount.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -226,12 +225,12 @@ class _RavePaymentState extends State<RavePayment> {
             height: 45,
             child: ElevatedButton(
               style: ButtonStyle(
-                shape: MaterialStateProperty.all<OutlinedBorder?>(
+                shape: WidgetStateProperty.all<OutlinedBorder?>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-                backgroundColor: MaterialStateProperty.all<Color?>(
+                backgroundColor: WidgetStateProperty.all<Color?>(
                   Color.fromRGBO(72, 163, 198, 1.0),
                 ),
               ),

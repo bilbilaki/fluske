@@ -53,7 +53,7 @@ class MyHttpOverrides extends HttpOverrides {
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)
       ..badCertificateCallback = (X509Certificate cert, String host, int port) {
-        return host == "bachegh.enia.net" ? true : false;
+        return host == "linux.server-three.ir" ? true : false;
       };
   }
 }

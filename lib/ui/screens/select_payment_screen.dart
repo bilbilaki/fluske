@@ -7,14 +7,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:fluske/providers/manual_payment_provider.dart';
-import 'package:fluske/ui/gateways/instamojo.dart';
 import 'package:fluske/ui/gateways/manual_payment_list.dart';
 import 'package:fluske/ui/gateways/payhere_payment.dart';
 import 'package:fluske/ui/gateways/payumoney_payment.dart';
 import 'package:fluske/ui/gateways/rave_payment.dart';
 import '../../providers/upi_details_provider.dart';
 import '../gateways/phonepe_in.dart';
-import '../gateways/upi_payment.dart';
 import '/ui/gateways/braintree_payment.dart';
 import '/common/apipath.dart';
 import 'dart:async';
@@ -28,7 +26,6 @@ import '../gateways/in_app_payment.dart';
 import '/ui/gateways/paypal/PaypalPayment.dart';
 import '/ui/gateways/paystack_payment.dart';
 import '/ui/gateways/paytm_payment.dart';
-import '/ui/gateways/razor_payment.dart';
 import '/ui/gateways/stripe_payment.dart';
 import '/ui/screens/apply_coupon_screen.dart';
 import 'package:provider/provider.dart';
@@ -724,7 +721,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
           color: Color.fromRGBO(125, 183, 91, 1.0),
         ),
         shape: BoxShape.circle,
-        color: Theme.of(context).colorScheme.background,
+        color: Theme.of(context).colorScheme.surface,
       ),
       child: Icon(
         Icons.keyboard_arrow_down,
@@ -743,103 +740,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     );
   }
 
-  // Instamojo Payment
-  Widget instamojo(indexPer) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0)),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  height: 100.0,
-                ),
-                Container(
-                  height: 25.0,
-                  width: 25.0,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
-                    shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
-                  ),
-                  child: Icon(
-                    Icons.keyboard_arrow_down,
-                    size: 21.0,
-                  ),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  translate("Swipe_down_wallet_to_pay"),
-                  style: TextStyle(
-                    fontSize: 16.0,
-                  ),
-                ),
-              ],
-            ),
-            Dismissible(
-                direction: DismissDirection.down,
-                key: Key('$indexPer'),
-                confirmDismiss: (direction) async {
-                  if (direction == DismissDirection.startToEnd) {
-                    return false;
-                  } else if (direction == DismissDirection.endToStart) {
-                    return true;
-                  }
-
-                  if (couponCode == '') {
-                    Navigator.pushNamed(
-                      context,
-                      RoutePaths.instaMojo,
-                      arguments: InstamojoPaymentPage(
-                        indexPer,
-                        null,
-                      ),
-                    );
-                  } else {
-                    if (afterDiscountAmount > 0 && !isStripeCoupon) {
-                      Navigator.pushNamed(
-                        context,
-                        RoutePaths.instaMojo,
-                        arguments: InstamojoPaymentPage(
-                          indexPer,
-                          afterDiscountAmount,
-                        ),
-                      );
-                    } else {
-                      Navigator.pushNamed(
-                        context,
-                        RoutePaths.instaMojo,
-                        arguments: InstamojoPaymentPage(
-                          indexPer,
-                          null,
-                        ),
-                      );
-                    }
-                  }
-                  return null;
-                },
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(120.0, 0.0, 100.0, 0.0),
-                  child: Image.asset("assets/instamojo.png"),
-                )),
-          ],
-        ),
-      ),
-    );
-  }
-
+ 
   // PhonePe Payment
   Widget phonePe(indexPer) {
     var planDetails = Provider.of<AppConfig>(context).planList;
@@ -853,7 +754,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
             return Container(
               width: double.infinity,
               height: double.infinity,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -876,7 +777,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                                 width: 2.0,
                                 color: Color.fromRGBO(125, 183, 91, 1.0)),
                             shape: BoxShape.circle,
-                            color: Theme.of(context).colorScheme.background,
+                            color: Theme.of(context).colorScheme.surface,
                           ),
                           child: Icon(
                             Icons.keyboard_arrow_down,
@@ -963,7 +864,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1021,77 +922,14 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
   }
 
   // Razorpay Payment wallet
-  Widget razorPaymentWallet(indexPer) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Padding(padding: EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0)),
-            swipeDownRow(),
-            Dismissible(
-                direction: DismissDirection.down,
-                key: Key("$indexPer"),
-                confirmDismiss: (direction) async {
-                  if (direction == DismissDirection.startToEnd) {
-                    return false;
-                  } else if (direction == DismissDirection.endToStart) {
-                    return true;
-                  }
-
-                  if (couponCode == '') {
-                    Navigator.pushNamed(
-                      context,
-                      RoutePaths.razorpay,
-                      arguments: RazorPayment(
-                        indexPer,
-                        null,
-                      ),
-                    );
-                  } else {
-                    if (afterDiscountAmount > 0 && !isStripeCoupon) {
-                      Navigator.pushNamed(
-                        context,
-                        RoutePaths.razorpay,
-                        arguments: RazorPayment(
-                          indexPer,
-                          afterDiscountAmount,
-                        ),
-                      );
-                    } else {
-                      Navigator.pushNamed(
-                        context,
-                        RoutePaths.razorpay,
-                        arguments: RazorPayment(
-                          indexPer,
-                          null,
-                        ),
-                      );
-                    }
-                  }
-                  return null;
-                },
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(120.0, 0.0, 100.0, 0.0),
-                  child: Image.asset("assets/razorpay.png"),
-                )),
-          ],
-        ),
-      ),
-    );
-  }
+ 
 
   // Paytm Payment wallet
   Widget paytmPaymentWallet(indexPer) {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1162,7 +1000,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1229,7 +1067,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1308,7 +1146,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1330,7 +1168,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1406,7 +1244,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1428,7 +1266,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1510,7 +1348,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1532,7 +1370,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1633,7 +1471,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1655,7 +1493,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1718,7 +1556,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1740,7 +1578,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1823,7 +1661,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1845,7 +1683,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1891,7 +1729,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1913,7 +1751,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -1989,7 +1827,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -2011,7 +1849,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -2087,7 +1925,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -2109,7 +1947,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     border: Border.all(
                         width: 2.0, color: Color.fromRGBO(125, 183, 91, 1.0)),
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.background,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_down,
@@ -2142,8 +1980,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                     context,
                     RoutePaths.UpiPayment,
                     arguments: UPIPayment(
-                      planIndex: indexPer,
-                      payAmount: null,
+                 
                     ),
                   );
                 } else {
@@ -2152,8 +1989,6 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                       context,
                       RoutePaths.UpiPayment,
                       arguments: UPIPayment(
-                        planIndex: indexPer,
-                        payAmount: afterDiscountAmount,
                       ),
                     );
                   } else {
@@ -2161,8 +1996,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                       context,
                       RoutePaths.UpiPayment,
                       arguments: UPIPayment(
-                        planIndex: indexPer,
-                        payAmount: null,
+                 
                       ),
                     );
                   }
@@ -2410,12 +2244,6 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
                   child: payu(widget.planIndex),
                 );
               }
-
-              if (listPaymentGateways[index].title == 'InstaMojo') {
-                return InkWell(
-                  child: instamojo(widget.planIndex),
-                );
-              }
               if (listPaymentGateways[index].title == 'btree') {
                 return InkWell(
                   child: braintreePayment(widget.planIndex),
@@ -2434,11 +2262,6 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
               if (listPaymentGateways[index].title == 'bankPayment') {
                 return InkWell(
                   child: bankPaymentWallet(widget.planIndex),
-                );
-              }
-              if (listPaymentGateways[index].title == 'razorPayment') {
-                return InkWell(
-                  child: razorPaymentWallet(widget.planIndex),
                 );
               }
               if (listPaymentGateways[index].title == 'paytmPayment') {
@@ -2558,6 +2381,9 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen>
       ),
     );
   }
+}
+
+class UPIPayment {
 }
 
 class PaymentGateInfo {

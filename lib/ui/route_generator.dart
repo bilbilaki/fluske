@@ -4,7 +4,6 @@ import 'package:fluske/ui/gateways/manual_payment_list.dart';
 import 'package:fluske/ui/gateways/payhere_payment.dart';
 import 'package:fluske/ui/gateways/payumoney_payment.dart';
 import 'package:fluske/ui/gateways/rave_payment.dart';
-import 'package:fluske/ui/gateways/upi_payment.dart';
 import 'package:fluske/ui/screens/audioScreen.dart';
 import 'package:fluske/ui/screens/liveEventScreen.dart';
 import 'package:fluske/ui/screens/otp_login.dart';
@@ -41,10 +40,7 @@ import '../ui/screens/membership_screen.dart';
 import '../ui/screens/other_history_screen.dart';
 import '../ui/screens/pay_history_screen.dart';
 import 'gateways/braintree_payment.dart';
-import 'gateways/instamojo.dart';
 import 'gateways/manual_payment_screen.dart';
-import 'gateways/paytm_payment.dart';
-import 'gateways/razor_payment.dart';
 import '../ui/screens/register_screen.dart';
 import '../ui/screens/select_payment_screen.dart';
 import '../ui/screens/stripe_history_screen.dart';
@@ -118,10 +114,6 @@ class RouteGenerator {
             child: NotificationDetailScreen(argument.title, argument.message),
             type: PageTransitionType.rightToLeft);
       case RoutePaths.instaMojo:
-        InstamojoPaymentPage? argument = args as InstamojoPaymentPage?;
-        return MaterialPageRoute(
-            builder: (context) =>
-                InstamojoPaymentPage(argument!.planIndex, argument.payAmount));
       case RoutePaths.subscriptionPlans:
         return PageTransition(
             child: SubPlanScreen(), type: PageTransitionType.rightToLeft);
@@ -148,12 +140,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => UpdateProfileScreen());
       case RoutePaths.bankPayment:
         return MaterialPageRoute(builder: (context) => BankPayment());
-      case RoutePaths.razorpay:
-        RazorPayment? argument = args as RazorPayment?;
-        return MaterialPageRoute(
-            builder: (context) =>
-                RazorPayment(argument!.index, argument.payAmount));
-
       case RoutePaths.stripe:
         StripePayment? argument = args as StripePayment?;
         return MaterialPageRoute(
@@ -165,35 +151,6 @@ class RouteGenerator {
             builder: (context) => BraintreePaymentScreen(
                 argument!.planIndex, argument.payAmount));
       case RoutePaths.payu:
-        PayuPayment? argument = args as PayuPayment;
-        return MaterialPageRoute(
-          builder: (context) => PayuPayment(
-            planIndex: argument.planIndex,
-            payAmount: argument.payAmount,
-          ),
-        );
-      case RoutePaths.paypal:
-        PaypalPayment? argument = args as PaypalPayment?;
-        return MaterialPageRoute(
-            builder: (context) => PaypalPayment(
-                  onFinish: argument!.onFinish,
-                  currency: argument.currency,
-                  userFirstName: argument.userFirstName,
-                  userLastName: argument.userLastName,
-                  userEmail: argument.userEmail,
-                  payAmount: argument.payAmount,
-                  planIndex: argument.planIndex,
-                ));
-      case RoutePaths.paytm:
-        PaytmPayment? argument = args as PaytmPayment?;
-        return MaterialPageRoute(
-            builder: (context) =>
-                PaytmPayment(argument!.index, argument.payAmount));
-      case RoutePaths.paystack:
-        PaystackPayment? argument = args as PaystackPayment?;
-        return MaterialPageRoute(
-            builder: (context) =>
-                PaystackPayment(argument!.index, argument.payAmount));
       case RoutePaths.inApp:
         InApp? argument = args as InApp?;
         return MaterialPageRoute(builder: (context) => InApp(argument!.index));
@@ -261,22 +218,7 @@ class RouteGenerator {
           ),
         );
 
-      case RoutePaths.RavePayment:
-        RavePayment? argument = args as RavePayment;
-        return MaterialPageRoute(
-          builder: (context) => RavePayment(
-            planIndex: argument.planIndex,
-            payAmount: argument.payAmount,
-          ),
-        );
-      case RoutePaths.PayherePayment:
-        PayHerePayment? argument = args as PayHerePayment;
-        return MaterialPageRoute(
-          builder: (context) => PayHerePayment(
-            planIndex: argument.planIndex,
-            payAmount: argument.payAmount,
-          ),
-        );
+      
       case RoutePaths.ChooseLanguage:
         return MaterialPageRoute(
           builder: (context) => LanguageScreen(),
@@ -295,22 +237,10 @@ class RouteGenerator {
             liveEvent: argument.liveEvent,
           ),
         );
-      case RoutePaths.UpiPayment:
-        UPIPayment argument = args as UPIPayment;
-        return MaterialPageRoute(
-          builder: (context) => UPIPayment(
-            planIndex: argument.planIndex,
-            payAmount: argument.payAmount,
-          ),
-        );
       case RoutePaths.recommendedVideos:
         RecommendedGridView argument = args as RecommendedGridView;
         return MaterialPageRoute(
             builder: (context) => RecommendedGridView(argument.videoList));
-      case RoutePaths.otplogin:
-        return MaterialPageRoute(
-          builder: (context) => OtpLoginScreen(),
-        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

@@ -66,9 +66,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _scrollViewController = new ScrollController();
     animation = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: Duration(milliseconds: 500),
     );
-    _fadeInFadeOut = Tween<double>(begin: 0.2, end: 0.8).animate(animation);
+    _fadeInFadeOut = Tween<double>(begin: 0.1, end: 0.7).animate(animation);
 
     animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {

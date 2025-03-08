@@ -38,13 +38,13 @@ class PayStackPlatformButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: function,
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color?>(
+            backgroundColor: WidgetStateProperty.all<Color?>(
               Color.fromRGBO(72, 163, 198, 1.0),
             ),
-            textStyle: MaterialStateProperty.all<TextStyle?>(
+            textStyle: WidgetStateProperty.all<TextStyle?>(
               TextStyle(color: Colors.white),
             ),
-            padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(
+            padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(
               EdgeInsets.symmetric(vertical: 13.0, horizontal: 10.0),
             ),
           ),

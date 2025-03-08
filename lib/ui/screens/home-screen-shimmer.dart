@@ -28,7 +28,7 @@ class _HomeScreenShimmerState extends State<HomeScreenShimmer>
     super.initState();
     animation = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: Duration(milliseconds: 500),
     );
     _fadeInFadeOut = Tween<double>(begin: 0.2, end: 0.8).animate(animation);
 

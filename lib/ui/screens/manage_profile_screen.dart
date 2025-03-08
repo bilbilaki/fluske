@@ -37,7 +37,7 @@ class _ManageProfileScreenState extends State<ManageProfileScreen> {
     return isAdmin == "1"
         ? Theme(
             data: ThemeData(
-              dialogBackgroundColor: Color.fromRGBO(0, 0, 0, 0.2),
+              dialogTheme: DialogThemeData(backgroundColor: Color.fromRGBO(0, 0, 0, 0.2)),
               // platform: TargetPlatform.android,
             ),
             child: PopupMenuButton<int>(
@@ -60,7 +60,7 @@ class _ManageProfileScreenState extends State<ManageProfileScreen> {
             ))
         : Theme(
             data: ThemeData(
-              dialogBackgroundColor: Color.fromRGBO(0, 0, 0, 0.2),
+              dialogTheme: DialogThemeData(backgroundColor: Color.fromRGBO(0, 0, 0, 0.2)),
             ),
             child: PopupMenuButton<int>(
               iconColor: Theme.of(context).colorScheme.surface,

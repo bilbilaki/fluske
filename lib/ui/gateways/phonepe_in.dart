@@ -10,7 +10,6 @@ import '../../common/apipath.dart';
 import '../../common/global.dart';
 import '../../common/route_paths.dart';
 import '../../providers/phonepe_base.dart';
-import 'package:phonepe_payment_sdk/phonepe_payment_sdk.dart';
 
 import '../screens/splash_screen.dart';
 
@@ -25,6 +24,8 @@ class PhonePeCheckoutViewModel extends BaseModel {
   bool enableLog = true;
   String packageName = "com.clicktventertainment.clicknplays";
   void phonepeInit() {
+    var PhonePePaymentSdk;
+    var startTransaction;
     PhonePePaymentSdk.init(environmentValue, appId, merchantId, enableLog)
         .then((val) {
       result = 'PhonePe SDK Initialized - $val';
@@ -65,6 +66,7 @@ class PhonePeCheckoutViewModel extends BaseModel {
     debugPrint("checksum>>>>>$checksum");
 
     try {
+      var PhonePePaymentSdk;
       PhonePePaymentSdk.startTransaction(
               body, callbackUrl, checksum, packageName)
           .then((response) {

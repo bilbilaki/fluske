@@ -16,7 +16,7 @@ class CreditCardWidget extends StatefulWidget {
     required this.cardHolderName,
     required this.cvvCode,
     required this.showBackView,
-    this.animationDuration = const Duration(milliseconds: 500),
+    this.animationDuration = const Duration(milliseconds: 200),
     this.height,
     this.width,
     this.textStyle,

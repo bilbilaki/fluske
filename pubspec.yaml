@@ -41,14 +41,14 @@ dependencies:
   video_player: ^2.8.2
   subtitle_wrapper_package: ^2.1.1
   
-  # payhere_mobilesdk_flutter: ^3.0.4
+  payhere_mobilesdk_flutter: ^3.0.4
   file_picker: ^5.2.2
   flutter_localization: ^0.1.12
   flutter_translate: ^4.0.3
   loading_overlay: ^0.3.0
   shared_preferences: ^2.0.15
   provider: ^6.0.4
-  http: ^1.3.0
+  http: ^1.2.2
   path_provider: ^2.1.4
   sticky_headers: ^0.3.0+2
 #  fluttertoast: ^8.1.1.
@@ -58,12 +58,12 @@ dependencies:
   intro_slider: ^3.0.10
 
   image_picker: ^0.8.6
-  cached_network_image: ^3.4.1
-  sqflite: ^2.4.1
+  cached_network_image: ^3.3.0
+  sqflite: ^2.2.0+3
   syncfusion_flutter_pdfviewer: ^27.1.50
   
   flutter_cache_manager: ^3.4.1
-  flutter_secure_storage: ^9.2.4
+  flutter_secure_storage: ^6.0.0
   carousel_slider: ^5.0.0
  
   
@@ -73,7 +73,7 @@ dependencies:
   page_transition: ^2.0.9
 
   # Old Version but do not upgrade it.
-  flutter_downloader: ^1.12.0
+  flutter_downloader: ^1.8.0
 
   
   
@@ -113,7 +113,7 @@ dependencies:
   fwfh_text_style: ^2.23.8
   wakelock_plus: ^1.1.4
   pinput: ^5.0.0
- # phonepe_payment_sdk: ^2.0.3
+  phonepe_payment_sdk: ^2.0.3
   get_it: ^8.0.0
   flutter_multi_formatter: ^2.13.0
   path_provider_android: ^2.2.11
